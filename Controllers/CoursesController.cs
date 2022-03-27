@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using MyCourse.Models.Application;
+using MyCourse.Models.Services.Application;
 
 namespace MyCourse.Controllers
 {
