@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using MyCourse.Models.Services.Application;
+using MyCourse.Models.ViewModels;
 
 namespace MyCourse.Controllers
 {
@@ -7,12 +9,17 @@ namespace MyCourse.Controllers
     {
         public IActionResult Index() 
         {
+            ViewData["Title"] = "Catalogo dei Corsi";
             var courseService = new  CourseService();
-            return View();
+            List<CourseViewModel> courses = courseService.GetCourses();
+            return View(courses);
         }
 
-        public IActionResult Detail(string id) 
+        public IActionResult Detail(int id) 
         {
+            var courseService = new  CourseService();
+            CourseDetailViewModel viewModel = courseService.GetCourse(id);
+            ViewData["Title"] = viewModel.Title;
             return View();
         }
     }
