@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MyCourse.Models.Application;
 
 namespace MyCourse.Controllers
 {
@@ -6,6 +7,7 @@ namespace MyCourse.Controllers
     {
         public IActionResult Index() 
         {
+            var courseService = new  CourseService();
             return View();
         }
 
