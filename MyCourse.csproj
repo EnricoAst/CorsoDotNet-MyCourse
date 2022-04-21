@@ -4,6 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup> 
+    <Folder Include="wwwroot\">
+    <Compile Remove="Models/Services/Application/CourseService.cs" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="2.1.0" />
