@@ -1,7 +1,9 @@
+using System.Data;
+
 namespace MyCourse.Models.Services.Infrastructure
 {
-    public class IDatabaseConnection
+    public interface IDatabaseConnection
     {
-        
+        DataSet Query(string query);
     }
 }
